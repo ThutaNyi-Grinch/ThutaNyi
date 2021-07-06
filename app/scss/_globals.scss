@@ -1,0 +1,110 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.125rem;
+  overflow-x: hidden;
+  &.no_scroll {
+    overflow: hidden;
+  }
+}
+.container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+  &-plr {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include breakPoint-Up(large) {
+      padding-left: 5.625rem;
+      padding-right: 5.625rem;
+    }
+  }
+}
+.position-r {
+  position: relative;
+}
+.hide-for-mobile {
+  @include breakPoint-Down(medium) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include breakPoint-Up(large) {
+    display: none;
+  }
+}
+.div-margin {
+  margin-top: 7rem;
+  @include breakPoint-Up(large) {
+    margin-top: 5rem;
+  }
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &-largeOn {
+    @include breakPoint-Up(large) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+.button {
+  @include breakPoint-Up(large) {
+    color: white;
+    background: $softRed;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-radius: 5px;
+  }
+}
+
+.box-shadowButton {
+  box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.2);
+}
+.overlay {
+  position: absolute;
+  background: $veryDarkBlue;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  z-index: 1;
+}
+.postion-align {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.title {
+  color: $veryDarkBlue;
+  margin-bottom: 1.625rem;
+  & h2 {
+    font-weight: 500;
+  }
+  @include breakPoint-Up(large) {
+    font-size: 1.5rem;
+  }
+}
+.decription {
+  color: $grayishBlue;
+  & p {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+}

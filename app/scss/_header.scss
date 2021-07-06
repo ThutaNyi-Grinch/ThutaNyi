@@ -1,0 +1,148 @@
+.header {
+  nav {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: white;
+  }
+  &.open {
+    .header__logo {
+      & svg .text {
+        fill: white;
+      }
+      & circle {
+        fill: white;
+      }
+      & .mark {
+        fill: $veryDarkBlue;
+      }
+    }
+    .header__toggle {
+      > span {
+        background: white;
+      }
+      > span:first-child {
+        transform: rotate(45deg) translate(5px, 4px);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+    .overlay {
+      opacity: 0.9;
+      pointer-events: visible;
+    }
+    .header__menu {
+      opacity: 1;
+      pointer-events: visible;
+    }
+  }
+  &__logo {
+    flex: 2;
+    z-index: 1;
+    & svg .text {
+      transition: all 300ms ease-in-out;
+    }
+    & circle {
+      transition: all 300ms ease-in-out;
+    }
+    & .mark {
+      transition: all 300ms ease-in-out;
+    }
+  }
+  &__toggle {
+    z-index: 2;
+    > span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: $veryDarkBlue;
+      transition: all 300ms ease-in-out;
+      &:not(:last-child) {
+        margin-bottom: 0.3125rem;
+      }
+    }
+  }
+  &__links {
+    flex: 3;
+    width: 28.75rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    text-align: right;
+    > a {
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:not(:last-child) {
+        color: $veryDarkBlue;
+        margin-right: 2.125rem;
+        transition: all 150ms ease-in-out;
+        &:hover {
+          color: $softRed;
+        }
+      }
+      &:last-child {
+        border: 3px solid $softRed;
+        transition: all 150ms ease-in-out;
+        &:hover {
+          background: transparent;
+          color: $softRed;
+          box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.2);
+        }
+      }
+    }
+  }
+  &__menu {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 2px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 600ms ease-in-out;
+    z-index: 1;
+    &-links {
+      width: 100%;
+      flex: 5;
+      margin-top: 6.8625rem;
+      text-align: center;
+      a {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        &:first-child {
+          border-top: 1px solid rgba($color: white, $alpha: 0.7);
+        }
+        &:not(:last-child) {
+          padding-top: 1.625rem;
+          padding-bottom: 1.625rem;
+          border-bottom: 1px solid rgba($color: white, $alpha: 0.7);
+        }
+        &:last-child {
+          margin-top: 1.625rem;
+          padding: 0.6rem 0;
+          border-radius: 5px;
+          border: 3px solid white;
+        }
+      }
+    }
+    &-social {
+      flex: 1;
+      a {
+        img {
+          width: 1.7rem;
+        }
+        &:last-child {
+          margin-left: 3rem;
+        }
+      }
+    }
+  }
+}

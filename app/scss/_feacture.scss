@@ -1,0 +1,161 @@
+.feacture {
+  .flex {
+    flex-direction: column;
+  }
+
+  &__text {
+    text-align: center;
+    @include breakPoint-Up(large) {
+      min-width: 35%;
+      max-width: 47%;
+    }
+  }
+  &__clicks {
+    width: 100%;
+    @include breakPoint-Up(large) {
+      width: 80%;
+    }
+    & .feacture__nav {
+      margin-top: 2.8625rem;
+      text-align: center;
+      @include breakPoint-Up(large) {
+        flex-direction: row;
+      }
+      > a {
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        display: block;
+        width: 100%;
+        color: $veryDarkBlue;
+        text-decoration: none;
+        padding-top: 1.625rem;
+        padding-bottom: 1.625rem;
+        position: relative;
+        border-bottom: 1px solid rgba($color: $grayishBlue, $alpha: 0.5);
+        transition: all 150ms ease-in-out;
+        &:first-child {
+          border-top: 1px solid rgba($color: $grayishBlue, $alpha: 0.5);
+          @include breakPoint-Up(large) {
+            border-top: none;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 50%;
+          height: 0.2rem;
+          background: $softRed;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          opacity: 0;
+        }
+        &:hover {
+          color: $softRed;
+        }
+        &.open {
+          color: $softRed;
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__box {
+    margin-top: 3rem;
+    position: relative;
+  }
+  &__image {
+    position: relative;
+    min-height: 18rem;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+    @include breakPoint-Up(large) {
+      width: 100%;
+      flex: 3;
+    }
+    &::before {
+      content: "";
+      min-width: 100%;
+      min-height: 60%;
+      border-radius: 0 0 4.6875rem 0;
+      position: absolute;
+      background: $softBlue;
+      top: 8.5rem;
+      right: 1.9375rem;
+      z-index: -1;
+      @include breakPoint-Up(medium) {
+        right: 13rem;
+        top: 10rem;
+      }
+      @include breakPoint-Up(large) {
+        height: 90%;
+        right: 11rem;
+        top: 6.5rem;
+        border-radius: 0 0 7.5rem 0;
+      }
+      @include breakPoint-Up(xlarge) {
+        right: 20rem;
+      }
+    }
+  }
+  &__mainImage {
+    min-height: 18rem;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include breakPoint-Up(large) {
+      position: absolute;
+      min-width: 125%;
+      left: -7rem;
+    }
+  }
+  &__summarys {
+    text-align: center;
+    @include breakPoint-Up(medium) {
+      margin-top: 6rem;
+    }
+    @include breakPoint-Up(large) {
+      text-align: left;
+      flex: 3;
+      position: relative;
+      height: 18rem;
+    }
+  }
+  &__summary {
+    display: none;
+    &-decription {
+      margin-bottom: 2.5rem;
+    }
+    &.open {
+      display: block !important;
+    }
+    &-button {
+      display: none;
+      & a {
+        background: $softBlue;
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 400;
+        padding: 1rem 1.5rem;
+        transition: all 150ms ease-in-out;
+        border: 3px solid $softBlue;
+        &:hover {
+          background: transparent;
+          color: $softBlue;
+        }
+      }
+      @include breakPoint-Up(large) {
+        display: block;
+      }
+    }
+    @include breakPoint-Up(large) {
+      width: 115%;
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+    }
+  }
+}

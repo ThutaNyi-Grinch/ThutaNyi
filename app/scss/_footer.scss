@@ -1,0 +1,172 @@
+.footer {
+  &.errorOn {
+    .footer__inputBox-button {
+      input {
+        border: 3px solid $softRed;
+        border-bottom: 20px solid $softRed;
+      }
+      .error {
+        opacity: 1;
+        &__text {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__inputBox {
+    text-align: center;
+    background: $softBlue;
+    padding: 4.375rem 0;
+    .flex {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &-top p {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+    }
+    &-title {
+      h2 {
+        color: white;
+      }
+      @include breakPoint-Up(large) {
+        width: 56%;
+      }
+    }
+
+    &-button {
+      input {
+        width: 100%;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        color: $grayishBlue;
+        font-size: 0.8rem;
+        border: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: border 300ms ease-in-out;
+      }
+      .button {
+        width: 100%;
+        text-decoration: none;
+        display: inline-block;
+        color: white;
+        background: $softRed;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 5px;
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        transition: all 150ms ease-in-out;
+        border: 3px solid $softRed;
+        &:hover {
+          background: white;
+          color: $softRed;
+        }
+        @include breakPoint-Up(large) {
+          margin-top: 0;
+          margin-left: 1rem;
+          width: 102%;
+        }
+      }
+      @include breakPoint-Up(large) {
+        display: flex;
+        width: 56%;
+      }
+    }
+  }
+  &__footer {
+    background: $veryDarkBlue;
+    .flex {
+      flex-direction: column;
+      @include breakPoint-Up(large) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.625rem;
+      margin-top: 1.625rem;
+      @include breakPoint-Up(large) {
+        margin-top: 0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      > a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        transition: all 150ms ease-in-out;
+        &:hover {
+          color: $softRed;
+        }
+      }
+      svg path.text {
+        fill: white;
+      }
+    }
+    &-social {
+      margin-top: 1.625rem;
+      margin-bottom: 1.625rem;
+      display: flex;
+      width: 25%;
+      justify-content: space-between;
+      align-items: center;
+      @include breakPoint-Up(large) {
+        width: 10%;
+        align-items: center;
+        justify-content: space-around;
+      }
+      > a {
+        svg path {
+          transition: all 150ms ease-in-out;
+        }
+        &:hover {
+          svg path {
+            fill: $softRed;
+          }
+        }
+      }
+    }
+  }
+}
+.error {
+  position: relative;
+  opacity: 0;
+  &__logo {
+    position: absolute;
+    top: -54px;
+    right: 1rem;
+    @include breakPoint-Up(large) {
+      top: 1rem;
+    }
+  }
+  &__text {
+    opacity: 0;
+    color: white;
+    font-size: 0.7rem;
+    position: absolute;
+    top: -20px;
+    left: 3px;
+    transition: opacity 350ms ease-in-out;
+    @include breakPoint-Up(large) {
+      width: 15rem;
+      top: 50px;
+      left: -349px;
+    }
+  }
+}

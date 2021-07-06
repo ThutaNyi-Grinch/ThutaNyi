@@ -1,0 +1,116 @@
+.hero {
+  height: 38rem;
+  position: relative;
+  overflow-x: hidden;
+  @include breakPoint-Up(medium) {
+    height: 40rem;
+  }
+  @include breakPoint-Up(large) {
+    height: 25rem;
+    margin-top: 2rem;
+  }
+  .hero__image {
+    width: 100%;
+    min-height: 18rem;
+    margin-bottom: 3rem;
+    position: relative;
+    @include breakPoint-Up(large) {
+      width: 100%;
+      order: 2;
+    }
+    &::before {
+      content: "";
+      min-width: 100%;
+      height: 60%;
+      border-radius: 0 0 0 4.6875rem;
+      position: absolute;
+      background: $softBlue;
+      top: 4.625rem; //122px
+      right: -4.0625rem; //65px
+      @include breakPoint-Up(medium) {
+        right: -20rem;
+        top: 8rem;
+      }
+      @include breakPoint-Up(large) {
+        height: 90%;
+        border-radius: 0 0 0 7.6875rem;
+        top: 7.625rem;
+        right: -6.9375rem;
+      }
+      @include breakPoint-Up(xlarge) {
+        right: -19rem;
+      }
+    }
+    &::after {
+      content: "";
+      min-width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(../../images/illustration-hero.svg);
+      background-size: contain;
+      background-position: center 10px;
+      background-repeat: no-repeat;
+      @include breakPoint-Up(large) {
+        top: 14%;
+        right: -9%;
+        transform: scale(1.3);
+      }
+    }
+  }
+  .hero_text {
+    @include breakPoint-Up(large) {
+      width: 90%;
+      order: 1;
+    }
+  }
+  .hero__title {
+    text-align: center;
+    @include breakPoint-Up(large) {
+      text-align: left;
+    }
+  }
+  .hero__decription {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    @include breakPoint-Up(large) {
+      text-align: left;
+    }
+  }
+  .hero__buttons {
+    text-align: center;
+
+    @include breakPoint-Up(large) {
+      text-align: left;
+    }
+    .hero__button {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 1rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      @include breakPoint-Up(large) {
+        font-weight: 400;
+      }
+      &:first-child {
+        color: white;
+        background: $softBlue;
+        margin-right: 0.3rem;
+        transition: all 150ms ease-in-out;
+        &:hover {
+          border: 3px solid $softBlue;
+          background: transparent;
+          color: $softBlue;
+        }
+      }
+      &:last-child {
+        color: rgba($color: $veryDarkBlue, $alpha: 0.8);
+        background: rgba($color: $grayishBlue, $alpha: 0.2);
+        transition: all 150ms ease-in-out;
+        &:hover {
+          border: 3px solid rgba($color: $veryDarkBlue, $alpha: 0.8);
+          background: transparent;
+        }
+      }
+    }
+  }
+}
